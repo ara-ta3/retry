@@ -2,10 +2,13 @@ package retry
 
 import "time"
 
-var exponentialBackOff = func(n int) time.Duration {
+// ExponentialBackOff Interval
+var ExponentialBackOff = func(n int) time.Duration {
 	return time.Duration(n) * time.Duration(n) * time.Second
 }
 
+// Retry run your func "fn", if it failed, Retry will retry "n" times with "interval" algorithm
+//     retry.Retry(10, retry.ExponentialBackOff, func() (interface{}, error) {...})
 func Retry(
 	n int,
 	interval func(n int, result interface{}) time.Duration,
