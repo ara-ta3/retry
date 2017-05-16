@@ -3,7 +3,7 @@ package retry
 import "time"
 
 // ExponentialBackOff Interval
-var ExponentialBackOff = func(n int) time.Duration {
+var ExponentialBackOff = func(n int, result interface{}) time.Duration {
 	return time.Duration(n) * time.Duration(n) * time.Second
 }
 
