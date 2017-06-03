@@ -1,5 +1,7 @@
 # retry
 
+[![Build Status](https://travis-ci.org/ara-ta3/retry.svg?branch=master)](https://travis-ci.org/ara-ta3/retry)
+
 # Example
 
 main.go
