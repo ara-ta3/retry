@@ -9,6 +9,7 @@ var ExponentialBackOff = func(n int, result interface{}) time.Duration {
 
 // Retry run your func "fn", if it failed, Retry will retry "n" times with "interval" algorithm
 //     retry.Retry(10, retry.ExponentialBackOff, func() (interface{}, error) {...})
+//     retry.Retry returns the return values of "func" at third args
 func Retry(
 	n int,
 	interval func(n int, result interface{}) time.Duration,
